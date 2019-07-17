@@ -13,7 +13,7 @@
         <!--Grail Diary-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="FriendsTableViewController" customModule="grail_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="POIsTableViewController" customModule="grail_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="756"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DiaryCell" id="5GM-wy-43C">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="POICell" id="5GM-wy-43C" customClass="POITableViewCell" customModule="grail_project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5GM-wy-43C" id="5C3-sf-630">
@@ -64,6 +64,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="clueCountLabel" destination="Wm9-NE-1Nk" id="zh4-Gn-Xar"/>
+                                            <outlet property="countryLabel" destination="EaW-CD-FGE" id="4s2-t5-1hp"/>
+                                            <outlet property="locationLabel" destination="iuE-Gk-vGF" id="kfR-8E-iEo"/>
                                             <segue destination="1Ae-V2-cry" kind="show" id="BVz-Wi-IpB"/>
                                         </connections>
                                     </tableViewCell>
@@ -87,15 +90,18 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="poiTableViewController" destination="ev1-A3-QUd" id="hh2-xD-XCP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="950.35971223021591" y="34.673366834170857"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="4t5-Ig-13S">
             <objects>
-                <viewController id="1Ae-V2-cry" sceneMemberID="viewController">
+                <viewController id="1Ae-V2-cry" customClass="POIDetailViewController" customModule="grail_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AOd-1H-fjd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,15 +156,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yiK-th-tOt"/>
                     </view>
+                    <connections>
+                        <outlet property="CountryLabel" destination="Oaq-43-N2z" id="Zr3-P0-0jR"/>
+                        <outlet property="cluesListTextView" destination="ubw-hM-tJE" id="1rK-sl-YMy"/>
+                        <outlet property="locationName" destination="Ttt-ZF-R8R" id="6cx-Hj-1PD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mp-Lf-XXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1837.68115942029" y="200.89285714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--AddPOI View Controller-->
         <scene sceneID="jlg-0V-zKb">
             <objects>
-                <viewController id="Qxx-ed-Ta2" sceneMemberID="viewController">
+                <viewController id="Qxx-ed-Ta2" customClass="AddPOIViewController" customModule="grail_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pI8-c2-Vnu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -213,9 +224,17 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9D-80-QTX">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem systemItem="cancel" id="alW-hZ-lW6"/>
+                                    <barButtonItem systemItem="cancel" id="alW-hZ-lW6">
+                                        <connections>
+                                            <action selector="cancelTapped:" destination="Qxx-ed-Ta2" id="4m6-wy-gvp"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="t0d-A9-pG7"/>
-                                    <barButtonItem systemItem="save" id="fgX-e0-Iof"/>
+                                    <barButtonItem systemItem="save" id="fgX-e0-Iof">
+                                        <connections>
+                                            <action selector="saveTapped:" destination="Qxx-ed-Ta2" id="Ahm-o5-5M2"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <color key="barTintColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
@@ -232,6 +251,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EeJ-iY-wzP"/>
                     </view>
+                    <connections>
+                        <outlet property="clue1TextField" destination="f5X-KT-z9A" id="Kqp-fg-ARa"/>
+                        <outlet property="clue2TextField" destination="INW-l6-ne8" id="iPj-xH-Bo6"/>
+                        <outlet property="clue3TextField" destination="odC-5R-9tc" id="B1o-pZ-zcs"/>
+                        <outlet property="countryTextField" destination="qDg-kb-8IE" id="LFi-4O-Tqz"/>
+                        <outlet property="locationTextField" destination="cq0-9b-wqC" id="A3v-yB-1tV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qi0-01-SFW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

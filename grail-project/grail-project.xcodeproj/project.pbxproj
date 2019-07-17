@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		634FD98C22DE2D9A00251E55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634FD98B22DE2D9A00251E55 /* AppDelegate.swift */; };
-		634FD98E22DE2D9A00251E55 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634FD98D22DE2D9A00251E55 /* FriendsTableViewController.swift */; };
 		634FD99122DE2D9A00251E55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634FD98F22DE2D9A00251E55 /* Main.storyboard */; };
 		634FD99322DE2D9C00251E55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 634FD99222DE2D9C00251E55 /* Assets.xcassets */; };
 		634FD99622DE2D9D00251E55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634FD99422DE2D9D00251E55 /* LaunchScreen.storyboard */; };
+		634FD9BE22DF7F7200251E55 /* AddPOIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634FD9BD22DF7F7200251E55 /* AddPOIViewController.swift */; };
+		634FD9C022DF7F8B00251E55 /* POIDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634FD9BF22DF7F8B00251E55 /* POIDetailViewController.swift */; };
+		634FD9C222DF7FC000251E55 /* POI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634FD9C122DF7FC000251E55 /* POI.swift */; };
+		634FD9C422DF800400251E55 /* POITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634FD9C322DF800400251E55 /* POITableViewCell.swift */; };
+		634FD9C922DF820C00251E55 /* POIsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634FD9C822DF820C00251E55 /* POIsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		634FD98822DE2D9A00251E55 /* grail-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "grail-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		634FD98B22DE2D9A00251E55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		634FD98D22DE2D9A00251E55 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		634FD99022DE2D9A00251E55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		634FD99222DE2D9C00251E55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		634FD99522DE2D9D00251E55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		634FD99722DE2D9D00251E55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		634FD9BD22DF7F7200251E55 /* AddPOIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPOIViewController.swift; sourceTree = "<group>"; };
+		634FD9BF22DF7F8B00251E55 /* POIDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIDetailViewController.swift; sourceTree = "<group>"; };
+		634FD9C122DF7FC000251E55 /* POI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POI.swift; sourceTree = "<group>"; };
+		634FD9C322DF800400251E55 /* POITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POITableViewCell.swift; sourceTree = "<group>"; };
+		634FD9C822DF820C00251E55 /* POIsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = POIsTableViewController.swift; path = ../../POIsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +63,41 @@
 			isa = PBXGroup;
 			children = (
 				634FD98B22DE2D9A00251E55 /* AppDelegate.swift */,
-				634FD98D22DE2D9A00251E55 /* FriendsTableViewController.swift */,
-				634FD98F22DE2D9A00251E55 /* Main.storyboard */,
+				634FD9C522DF810300251E55 /* View Controllers */,
+				634FD9C722DF818400251E55 /* Views & Cells */,
+				634FD9C622DF812E00251E55 /* Storyboards */,
 				634FD99222DE2D9C00251E55 /* Assets.xcassets */,
-				634FD99422DE2D9D00251E55 /* LaunchScreen.storyboard */,
 				634FD99722DE2D9D00251E55 /* Info.plist */,
 			);
 			path = "grail-project";
+			sourceTree = "<group>";
+		};
+		634FD9C522DF810300251E55 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				634FD9C822DF820C00251E55 /* POIsTableViewController.swift */,
+				634FD9BD22DF7F7200251E55 /* AddPOIViewController.swift */,
+				634FD9BF22DF7F8B00251E55 /* POIDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		634FD9C622DF812E00251E55 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				634FD98F22DE2D9A00251E55 /* Main.storyboard */,
+				634FD99422DE2D9D00251E55 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		634FD9C722DF818400251E55 /* Views & Cells */ = {
+			isa = PBXGroup;
+			children = (
+				634FD9C122DF7FC000251E55 /* POI.swift */,
+				634FD9C322DF800400251E55 /* POITableViewCell.swift */,
+			);
+			path = "Views & Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +171,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				634FD98E22DE2D9A00251E55 /* FriendsTableViewController.swift in Sources */,
+				634FD9C922DF820C00251E55 /* POIsTableViewController.swift in Sources */,
+				634FD9C222DF7FC000251E55 /* POI.swift in Sources */,
+				634FD9BE22DF7F7200251E55 /* AddPOIViewController.swift in Sources */,
+				634FD9C022DF7F8B00251E55 /* POIDetailViewController.swift in Sources */,
+				634FD9C422DF800400251E55 /* POITableViewCell.swift in Sources */,
 				634FD98C22DE2D9A00251E55 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
