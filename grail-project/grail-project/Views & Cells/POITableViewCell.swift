@@ -15,18 +15,18 @@ class POITableViewCell: UITableViewCell {
     @IBOutlet weak var clueCountLabel: UILabel!
     
     
-    var POI: POI? {
+    var poi: POI? {
     didSet {
         updateViews()
     }
 }
 
 private func updateViews() {
-    guard let POI = POI else { return }
+    guard let poi = poi else { return }
     
-    locationLabel.text = POI.location
-    countryLabel.text = POI.country
-    clueCountLabel.text = "\(POI.clues.count) clues"
+    locationLabel.text = poi.location
+    countryLabel.text = poi.country
+    clueCountLabel.text = "\(poi.clues.count) clues"
         
     }
     
