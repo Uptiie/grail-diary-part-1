@@ -28,10 +28,9 @@ class AddPOIViewController: UIViewController {
     }
     
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
+        
        guard let location = locationTextField.text,
-            let country = countryTextField.text,
-            !location.isEmpty,
-            !country.isEmpty else { return }
+        let country = countryTextField.text else { return }
         
         var poi = POI(location: location, country: country, clues: [])
         
@@ -51,8 +50,7 @@ class AddPOIViewController: UIViewController {
             poi.clues.append(clue3)
         }
         
-        
-        
+        delegate?.poiWasCreated(poi)
     }
     
 }

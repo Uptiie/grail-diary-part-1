@@ -67,7 +67,7 @@
                                             <outlet property="clueCountLabel" destination="Wm9-NE-1Nk" id="zh4-Gn-Xar"/>
                                             <outlet property="countryLabel" destination="EaW-CD-FGE" id="4s2-t5-1hp"/>
                                             <outlet property="locationLabel" destination="iuE-Gk-vGF" id="kfR-8E-iEo"/>
-                                            <segue destination="1Ae-V2-cry" kind="show" id="BVz-Wi-IpB"/>
+                                            <segue destination="1Ae-V2-cry" kind="show" identifier="ShowDetailSegue" id="BVz-Wi-IpB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -91,7 +91,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="poiTableViewController" destination="ev1-A3-QUd" id="hh2-xD-XCP"/>
+                        <outlet property="poiTableView" destination="ev1-A3-QUd" id="8Yc-oe-mvw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

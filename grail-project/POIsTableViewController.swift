@@ -10,7 +10,7 @@ import UIKit
 
 class POIsTableViewController: UIViewController {
 
-    @IBOutlet weak var poiTableViewController: UITableView!
+    @IBOutlet weak var poiTableView: UITableView!
 
     var pois: [POI] = []
 }
@@ -35,6 +35,21 @@ extension POIsTableViewController: UITableViewDataSource {
             if let addPOIVC = segue.destination as? AddPOIViewController {
                 addPOIVC.delegate = self
             }
-        } else if segue.identifier ==
+        } else if segue.identifier == "ShowDetailSegue" {
+            if let showDetailVC = segue.destination as? POIDetailViewController,
+                let indexPath = poiTableView.indexPathForSelectedRow {
+                showDetailVC.poi = pois[indexPath.row]
+            }
+        }
     }
+}
+
+extension POIsTableViewController: AddPOIDelegate {
+    
+    func poiWasCreated(_ poi: POI) {
+        pois.append(poi)
+        dismiss(animated: true, completion: nil)
+        poiTableView.reloadData()
+        
+}
 }
