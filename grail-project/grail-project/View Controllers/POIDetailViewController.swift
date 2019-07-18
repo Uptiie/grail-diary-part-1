@@ -28,7 +28,7 @@ class POIDetailViewController: UIViewController {
         CountryLabel.text = poi.country
         var clueText = ""
         for clue in poi.clues {
-            clueText += ". \(clue)\n"
+            clueText += "∙ \(clue)\n"
         }
         
         cluesListTextView.text = clueText

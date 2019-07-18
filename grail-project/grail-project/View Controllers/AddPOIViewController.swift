@@ -34,7 +34,10 @@ class AddPOIViewController: UIViewController {
             !country.isEmpty else { return }
         
         var poi = POI(location: location, country: country, clues: [])
-        if let clue1 = locationTextField
+        
+        if let clue1 = clue1TextField.text,
+            !clue1.isEmpty {
+            poi.clues.append(clue1)
         
         }
         
